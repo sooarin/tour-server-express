@@ -1,0 +1,46 @@
+{
+  "name": "tour-server",
+  "version": "1.0.0",
+  "description": "tour project server repository",
+  "main": "index.js",
+  "scripts": {
+    "prisma:migrate": "npx prisma migrate dev --preview-feature",
+    "prisma:generate": "npx prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sooarin/tour-server-express.git"
+  },
+  "author": "Soarin Kim",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sooarin/tour-server-express.git/issues"
+  },
+  "homepage": "https://github.com/sooarin/tour-server-express.git#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "@prisma/client": "^2.27.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jest": "^27.0.6",
+    "jest-mock-extended": "^1.0.18",
+    "joi": "^17.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.33",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "prisma": "^2.27.0",
+    "supertest": "^6.1.4",
+    "winston": "^3.3.3"
+  },
+  "type": "module"
+}

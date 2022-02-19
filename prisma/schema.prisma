@@ -1,0 +1,52 @@
+//
+// Copyright Gymmon Co. - All Rights Reserved
+// Unauthorized copying of this file, via any medium is strictly prohibited
+// Proprietary and confidential
+// Written by Jasper Lee <jh.lee@gymmon.work>, July 2021
+// 
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id Int @default(autoincrement()) @id
+  email String @unique
+  name String?
+  passwd String
+  salt String?
+  comment Comment[]
+  likes Likes[]
+}
+
+model Tour {
+  id Int @default(autoincrement()) @id
+  city String
+  town String
+  name String
+  geo String
+  info String?
+  comments Comment[]
+  likes Likes[]
+}
+
+model Comment {
+  id Int @default(autoincrement()) @id
+  user User @relation(fields: [uid], references: [id])
+  uid Int
+  tour Tour @relation(fields: [tid], references: [id])
+  tid Int
+  comment String?
+}
+
+model Likes {
+  id Int @default(autoincrement()) @id
+  user User @relation(fields: [uid], references: [id])
+  uid Int
+  tour Tour @relation(fields: [tid], references: [id])
+  tid Int
+}
