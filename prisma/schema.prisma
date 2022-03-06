@@ -1,11 +1,5 @@
-//
-// Copyright Gymmon Co. - All Rights Reserved
-// Unauthorized copying of this file, via any medium is strictly prohibited
-// Proprietary and confidential
-// Written by Jasper Lee <jh.lee@gymmon.work>, July 2021
-// 
 datasource db {
-    provider = "sqlite"
+    provider = "mysql"
     url      = env("DATABASE_URL")
 }
 
@@ -25,11 +19,28 @@ model User {
 
 model Tour {
   id Int @default(autoincrement()) @id
-  city String
-  town String
-  name String
-  geo String
-  info String?
+  name String?
+  type String?
+  address String?
+  addressDetail String?
+  geo_x Float?
+  geo_y Float?
+  width Float?
+  facilities String @db.Text()
+  accommodation String?
+  amusement String @db.Text()
+  culturalFacilities String @db.Text()
+  guestFacilities String?
+  supportFacilities String?
+  date String?
+  acceptNumbers Int?
+  parkingAvailable Int?
+  info String @db.LongText()
+  phoneNumber String?
+  institutionName String?
+  standardDate String?
+  providerCode Int?
+  providerName String?
   comments Comment[]
   likes Likes[]
 }
