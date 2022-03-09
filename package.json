@@ -43,5 +43,8 @@
     "supertest": "^6.1.4",
     "winston": "^3.3.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
